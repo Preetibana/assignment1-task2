@@ -1,0 +1,93 @@
+
+.bg i{
+	margin-left:20px;
+	font-size:27px;
+	color:black;
+}
+.bg2 i{
+	margin-left:20px;
+}
+.bg button
+{
+	margin-left:50px;
+}
+.btnpost
+{
+	border
+}
+#img
+{
+	display:none;
+}
+#posts img
+{
+	height:250px;
+	width:100%;
+}
+#posts .col-md-12
+{
+	padding:0px;
+}
+.con {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.con:hover .overlay {
+  opacity: 1;
+}
+
+.icon {
+  color: white;
+  font-size: 70px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.icon2 {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 70%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.icon3 {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 70%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.fa-user:hover {
+  color: #eee;
+}

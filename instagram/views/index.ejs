@@ -1,0 +1,324 @@
+
+<html>
+<head>
+ <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+	<link rel='stylesheet' href='/stylesheets/base.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./css/base.css" type="text/css"/>
+  <script>
+  $(document).ready(function()
+  {
+  var uplaod_file="";
+    //$(".post").hide();
+	$(".comment").hide();
+    $(".down").click(function()
+	{
+	  $(".post").toggle();
+	});
+	$(".postbtn").click(function(){
+	$(".comment").show();
+	
+    $(".comment").append("<div class='col-md-12 p-3 rounded' style='background-color:white;margin-top:10px;'><p>"
++$("#postcomment").val()+"</p></div>");
+     });
+	$("#imgInp").change(function() {
+  readURL(this);
+});
+	 
+$("#close").click(function()
+{
+//alert(upload_file);
+$(".comment").show();
+$("#img").css({"display":"block"});
+$("#img").attr("src",upload_file);
+ $(".comment").append("<div class='col-md-12 p-3 rounded' style='background-color:white;margin-top:10px;'><p>"
++$("#postcomment2").val()+"</p></div>");
+});
+  });
+  
+  function readURL(input) {
+	
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    
+    reader.onload = function(e) {
+	
+      $('#blah').attr('src', e.target.result);
+	  upload_file=e.target.result;
+    }
+    
+    reader.readAsDataURL(input.files[0]); // convert to base64 string
+  }
+}
+
+  </script>
+</head>
+<body>
+
+<h2><%= records[0] %></h2>
+<h2><%= records.name %></h2>
+
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Upload Any Photo To Post</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+	  <div class="form-group">
+	   <input type='file' id="imgInp" />
+	  </div>
+	  <div class="form-group">
+	  <img id="blah" src="#" alt="your image" />
+	  </div>
+       
+         <div class="form-group">
+	 <textarea class="form-control" placeholder="type Something about" id="postcomment2"></textarea>
+	  </div>
+	  <div class="form-group">
+		<button type="button" class="btn btn-danger" id="close" data-dismiss="modal">Upload</button>
+		</div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i></button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="container">
+<div class="row p-3 border">
+<div class="col-md-10">
+<img src="./images/insta.png" alt="photo" />
+</div>
+<div class="col-md-2">
+<div class="btn-group bg">
+  <i class="fa fa-home"></i>
+  <i class="fa fa-heart"></i>
+   <i class="fa fa-user"></i>
+  
+</div>
+</div>
+</div>
+
+<div class="row bg-light">
+<div class="media p-3">
+  <img src="../images/Dhruv.jpg" alt="John Doe" class="mr-3 mt-3 rounded-circle img-thumbnail" style="width:250px;height:250px;">
+  <div class="media-body" style="padding-top:10px;padding-left:50px;">
+    <h4>Dhruv Rathee <i class="fa fa-instagram"></i><small>&nbsp&nbsp&nbsp&nbsp<i class="btn btn-primary">Follow</i>&nbsp&nbsp&nbsp&nbsp<button class="btn btn-primary fa fa-caret-down down"></button></small></h4>
+   <div class="btn-group bg2">
+   <i><b>189</b> posts</i>
+<i><b>469k</b> followers</i>
+<i><b>199</b> following</i>
+
+</div>
+<h6 class="p-3">Dhruv Rathee</h6>
+<p>
+YouTube Educator 4 million subsrciber <br>
+
+
+Social Activism<br>
+
+ Traveller<br>
+
+
+
+
+
+Blogger<br>
+<i class="fa fa-envelope text-primary"></i>contact@dhruvrathee.com
+</p>
+  </div>
+</div>
+<div class="col-md-12 p-3 border-bottom">
+<div class="row text-center">
+<div class="col-md-2">
+<img src="../images/australia.jpg" class="rounded-circle img-thumbnail" style="height:150px;width:150px;"/>
+<h6>
+Australia
+</h6>
+</div>
+<div class="col-md-2">
+<img src="../images/Austria.jpg" class="rounded-circle img-thumbnail"/>
+<h6>
+Austria
+</h6>
+</div>
+<div class="col-md-2">
+<img src="../images/checkrepuvlic.jpg" class="rounded-circle img-thumbnail"/>
+<h6>
+Check Republic
+</h6>
+</div>
+<div class="col-md-2">
+<img src="../images/germany.jpg" class="rounded-circle img-thumbnail"/>
+<h6>
+Germany
+</h6>
+</div>
+<div class="col-md-2">
+<img src="../images/iceland.jpg" class="rounded-circle img-thumbnail"/>
+<h6>
+Iceland
+</h6>
+</div>
+<div class="col-md-2">
+<img src="../images/france.jpg" class="rounded-circle img-thumbnail"/>
+<h6>
+France
+</h6>
+</div>
+</div>
+</div>
+</div>
+<div class="row bg-light">
+<div class="container post p-3 border">
+<div class="col-md-12">
+<div class="btn-group p-3">
+<button class="btn btn-default border" type="button" id="photo" name="sub" data-toggle="modal" data-target="#myModal">Photos</button>&nbsp&nbsp&nbsp&nbsp<button class="btn btn-default border" type="button" name="sub">Videos</button>
+</div>
+<br>
+<div class="form-group">
+<textarea class="form-control" name="postcomment" id="postcomment" placeholder="Post Something You Want To"></textarea>
+</div>
+<div class="form-group">
+<div class="btn-group"><button class="btn btn-primary postbtn" type="button" name="sub">Post</button></div><br><br>
+<div class="row comment p-3 border">
+<div class="media">
+  <img src="./images/Dhruv.jpg" class="img-thumbnail roun" alt="John Doe" class="mr-3 mt-3 rounded-circle" style="width:60px;">
+  <div class="media-body">
+    <h6 class="text-primary">Dhruv Rathee </h6>
+    <small><i style="font-size:10px;" class="text-muted">Posted on February 19, 2016</i></small>
+  </div>
+</div>
+<div class="col-md-12 p-3">
+<img src="" id="img" style="height:250px;width:250px;"/>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row p-3" id="posts" style="background-color:white;">
+<div class="col-md-12 bg-light">
+<h3>Your Previous Posts</h3>
+</div>
+<div class="col-md-12 p-3 border">
+<div class="row">
+<div class="col-md-4 p-3">
+<div class="col-md-12 con">
+<img src="./images/andy.jpg" class="border img-thumbnail"/>
+ <div class="overlay">
+  <a href="#" class="icon" title="User Profile">
+    <i class="fa fa-instagram"></i>
+  </a>
+  </div>
+   <a href="#" class="icon2" title="User Profile">
+    <i class="fa fa-heart"></i>20.5K
+  </a>
+   <a href="#" class="icon3" title="User Profile">
+    <i class="fa fa-cloud"></i> 50k
+  </a>
+  </div>
+</div>
+<div class="col-md-4 p-3">
+<div class="col-md-12 con">
+<img src="./images/ben.jpg" class="border img-thumbnail"/>
+ <div class="overlay">
+  <a href="#" class="icon" title="User Profile">
+    <i class="fa fa-instagram"></i>
+  </a>
+   <a href="#" class="icon2" title="User Profile">
+    <i class="fa fa-heart"></i>20.7k
+  </a>
+   <a href="#" class="icon3" title="User Profile">
+    <i class="fa fa-cloud"></i>500k
+  </a>
+  </div>
+  </div>
+</div>
+<div class="col-md-4 p-3">
+<div class="col-md-12 con">
+<img src="./images/fedderer.jpg" class="border img-thumbnail"/>
+ <div class="overlay">
+  <a href="#" class="icon" title="User Profile">
+    <i class="fa fa-instagram"></i>
+  </a>
+  </div>
+   <a href="#" class="icon2" title="User Profile">
+    <i class="fa fa-heart"></i>40.5k
+  </a>
+   <a href="#" class="icon3" title="User Profile">
+    <i class="fa fa-cloud"></i>300k
+  </a>
+  </div>
+</div>
+<div class="col-md-4 p-3">
+<div class="col-md-12 con">
+<img src="./images/nominees.jpg" class="border img-thumbnail"/>
+ <div class="overlay">
+  <a href="#" class="icon" title="User Profile">
+    <i class="fa fa-instagram"></i>
+  </a>
+   <a href="#" class="icon2" title="User Profile">
+    <i class="fa fa-heart"></i>34k
+  </a>
+   <a href="#" class="icon3" title="User Profile">
+    <i class="fa fa-cloud"></i>1000k
+  </a>
+  </div>
+  </div>
+</div>
+<div class="col-md-4 p-3">
+<div class="col-md-12 con">
+<img src="./images/lucybronze.jpg" class="border img-thumbnail"/>
+ <div class="overlay">
+  <a href="#" class="icon" title="User Profile">
+    <i class="fa fa-instagram"></i>
+  </a>
+   <a href="#" class="icon2" title="User Profile">
+    <i class="fa fa-heart"></i>45.6k
+  </a>
+   <a href="#" class="icon3" title="User Profile">
+    <i class="fa fa-cloud"></i>1200
+  </a>
+  </div>
+</div>
+</div>
+<div class="col-md-4 p-3">
+<div class="col-md-12 con">
+<img src="./images/lewis.jpg" class="border img-thumbnail"/>
+ <div class="overlay">
+  <a href="#" class="icon" title="User Profile">
+    <i class="fa fa-instagram"></i>
+  </a>
+   <a href="#" class="icon2" title="User Profile">
+    <i class="fa fa-heart"></i>15.5k
+  </a>
+   <a href="#" class="icon3" title="User Profile">
+    <i class="fa fa-cloud"></i>1400
+  </a>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
